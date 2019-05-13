@@ -1,0 +1,62 @@
+body {
+    background-color: black;
+    color: white;
+}
+
+#title {
+    padding-top: 20px;
+    font-size: 125px;
+    font-family: 'Special Elite', cursive;
+    margin-right: 11%;
+}
+
+#subtitle {
+    margin-right: 10%;
+}
+
+.und {
+    text-decoration: underline;
+}
+
+header {
+    width: 100%;
+    margin-bottom: 30px;
+}
+
+#fleft {
+    float: left!important;
+    width: 200px;
+}
+/* header ends here */
+#spec {
+    display: none;
+    margin-bottom: 20px;
+    font-size: 50px;
+    padding-top: 0;
+}
+
+#both {
+    margin: 0 auto;
+    border: dotted white 1px;
+    height: 600px;
+    width: 50%;
+}
+
+#left {
+    float: left;
+    width: 49.75%;
+    height: 600px;
+    border-right: dotted white 1px;
+}
+
+#right {
+    float: right!important;
+    width: 50%;
+    height: 600px;
+}
+
+p {
+    padding-top: 15px;
+    font-size: 24px;
+    text-align: center;
+}
