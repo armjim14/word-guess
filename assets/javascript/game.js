@@ -1,7 +1,10 @@
 var time = 12;
 var li = 0;
 var arr = [];
-var choice = ["KitKat", "Twix", "Hershey", "Snickers", "Crunch", "Pay", "Reeses"];
+var choice = ["KitKat", "Twix", "Hershey", "Snickers", "Crunch", "Pay", "Reeses", "mnms", "kinder", "cocoa"];
+var what = Math.floor(Math.random() * 10);
+var last = (choice[what].toUpperCase());
+console.log(last);
 
 document.onkeyup = function(e) {
     var userchoice = " " + e.key;
@@ -18,7 +21,7 @@ function simple() {
     press();
 }
 
-function press() {
-    time -= 1;
-    document.getElementById("number").innerHTML = this.time;
+function press() {  
+        time -= 1;
+        document.getElementById("number").innerHTML = this.time;
 }
