@@ -8,7 +8,7 @@ var gues = document.getElementById("guess");
 var dots = document.getElementById("show");
 
 document.onkeyup = function(e) {
-    var letter = e.key;
+    var letter = e.key.toUpperCase();
 
     if ( start == 0 ){
         start =+ 1;
@@ -34,6 +34,7 @@ function press() {
         time = 12;
         arr = [];
         gues.textContent = " ";
+        start -= 1;
     }
 }
 
@@ -46,11 +47,9 @@ function nextLevel(norm) {
         other.style.display = "none";
 
         var userchoice = " " + norm;
-        userchoice.toUpperCase();
-        console.log(userchoice);
         arr[li] = userchoice;
 
-        gues.innerHTML = arr;
+        gues.textContent = arr;
 
         simple(); 
     } else {
