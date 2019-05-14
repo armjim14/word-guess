@@ -1,33 +1,21 @@
 var time = 12;
 var li = 0;
+var start = 0
 var arr = [];
-var choice = ["KitKat", "Twix", "Hershey", "Snickers", "Crunch", "Pay", "Reeses", "mnms", "kinder", "cocoa"];
-var what = Math.floor(Math.random() * 10);
-var last = (choice[what].toUpperCase());
 
 var other = document.getElementById("left-text");
-
+var gues = document.getElementById("guess");
 var dots = document.getElementById("show");
-showword();
 
 document.onkeyup = function(e) {
-    var norm = e.key;
-    if ( (norm == "a") || (norm == "b") || (norm == "c") || (norm == "d") || (norm == "e") || (norm == "f") || (norm == "g") || (norm == "h") || (norm == "i") || (norm == "j")
-    || (norm == "k") || (norm == "l") || (norm == "m") || (norm == "n") || (norm == "o") || (norm == "p") || (norm == "q") || (norm == "r") || (norm == "s") || (norm == "t")
-    || (norm == "u") || (norm == "v") || (norm == "w") || (norm == "x") || (norm == "y") || (norm == "z") ) {
-    
-    other.style.display = "none";
+    var letter = e.key;
 
-    var userchoice = " " + e.key;
-    arr[li] = userchoice;
-
-    var gues = document.getElementById("guess");
-    gues.innerHTML = arr;
-
-    simple();
+    if ( start == 0 ){
+        start =+ 1;
+        nextLevel(letter);
+        getword();
     } else {
-        other.style.display = "block";
-        other.textContent = "Not a valid key";
+        nextLevel(letter);
     }
 }
 
@@ -38,19 +26,48 @@ function simple() {
 
 function press() {  
 
-    document.getElementById("number").innerHTML = this.time;
+    document.getElementById("number").innerHTML = time;
     
     if ( time >= 1 ){
         time -= 1;
     } else {
-        time =+ 1;
+        time = 12;
+        arr = [];
+        gues.textContent = " ";
     }
 }
 
-function showword() {
+function nextLevel(norm) {
+
+    if ( (norm == "A") || (norm == "B") || (norm == "C") || (norm == "D") || (norm == "E") || (norm == "F") || (norm == "G") || (norm == "H") || (norm == "I") || (norm == "J")
+        || (norm == "K") || (norm == "L") || (norm == "M") || (norm == "N") || (norm == "O") || (norm == "P") || (norm == "Q") || (norm == "R") || (norm == "S") || (norm == "T")
+        || (norm == "U") || (norm == "V") || (norm == "W") || (norm == "X") || (norm == "Y") || (norm == "Z") ) {
+        
+        other.style.display = "none";
+
+        var userchoice = " " + norm;
+        userchoice.toUpperCase();
+        console.log(userchoice);
+        arr[li] = userchoice;
+
+        gues.innerHTML = arr;
+
+        simple(); 
+    } else {
+        other.style.display = "block";
+        other.textContent = "Not a valid key";
+    }
+}
+
+function getword() {
+    var choice = ["KitKat", "Twix", "Hershey", "Snickers", "Crunch", "Pay", "Reeses", "mnms", "kinder", "cocoa"];
+    var what = Math.floor(Math.random() * 10);
+    var last = (choice[what].toUpperCase());
+
     for ( var i = 0; i < last.length; i++ ) {
         var span = document.createElement("Span");
-        span.textContent = "-"
+        span.setAttribute("id", i );
+        span.textContent = last[i];
         dots.appendChild(span);
     }
 }
