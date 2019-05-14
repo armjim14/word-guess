@@ -6,6 +6,12 @@ var arr = [];
 var other = document.getElementById("left-text");
 var gues = document.getElementById("guess");
 var dots = document.getElementById("show");
+var win = document.getElementById("winner");
+var winner = 0;
+var loser = document.getElementById("loser");
+var lose = 0;
+
+win.textContent = winner;
 
 document.onkeyup = function(e) {
     var letter = e.key.toUpperCase();
@@ -34,8 +40,11 @@ function press() {
         time = 12;
         arr = [];
         gues.textContent = " ";
+        dots.textContent = "";
         start -= 1;
+        lose += 1;
     }
+    loser.textContent = lose;
 }
 
 function nextLevel(norm) {
