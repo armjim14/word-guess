@@ -43,10 +43,19 @@ header {
 }
 
 #left {
+    position: relative;
     float: left;
     width: 49.75%;
     height: 600px;
     border-right: dotted white 1px;
+}
+
+#left-text {
+    display: none;
+    position: absolute;
+    right: 15px;
+    bottom: 15px;
+    color: red;
 }
 
 #right {
