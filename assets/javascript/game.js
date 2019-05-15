@@ -1,10 +1,13 @@
 var time = 12;
 var start = 0
 var keeptrack = 0;
+var rtime = 0;
 
 var choice = ["KitKat", "Twix", "Hershey", "Snickers", "Crunch", "Pay", "Reeses", "mnms", "kinder", "cocoa"];
 var what = Math.floor(Math.random() * 10);
 var word = (choice[what].toUpperCase());
+
+var arr = [];
 
 var other = document.getElementById("left-text");
 var gues = document.getElementById("guess");
@@ -18,33 +21,39 @@ var lose = 0;
 
 document.onkeyup = function(e) {
     var letter = e.key.toUpperCase();
+
     other.textContent = "";
     loser.textContent = lose;
     win.textContent = winner;
     num.textContent = time;
 
+    console.log(arr);
+
     if ( start == 0 ){
         start =+ 1;
         getword();
-        nextLevel(letter);
-        checkletter(letter);
+    } else if ( (letter == arr[0]) || (letter == arr[1]) || (letter == arr[2]) || (letter == arr[3]) || (letter == arr[4]) || (letter == arr[5]) || (letter == arr[6]) 
+    || (letter == arr[7]) || (letter == arr[8]) || (letter == arr[9]) || (letter == arr[10]) || (letter == arr[11]) || (letter == arr[12]) ) {
+        other.textContent = "that " + letter + " is already selected";
     } else {
-        nextLevel(letter);
-        checkletter(letter);
+        
+        if ( (letter == "A") || (letter == "B") || (letter == "C") || (letter == "D") || (letter == "E") || (letter == "F") || (letter == "G") || (letter == "H") || (letter == "I") || (letter == "J")
+        || (letter == "K") || (letter == "L") || (letter == "M") || (letter == "N") || (letter == "O") || (letter == "P") || (letter == "Q") || (letter == "R") || (letter == "S") || (letter == "T")
+        || (letter == "U") || (letter == "V") || (letter == "W") || (letter == "X") || (letter == "Y") || (letter== "Z") ) {
+
+            arr[rtime] = letter;
+
+            var userchoice = " " + letter;
+            var newspan = document.createElement("span");
+            newspan.textContent = userchoice;
+            gues.appendChild(newspan); 
+
+            rtime += 1;
+
+            checkletter(letter);
+
+        }
     }
-}
-
-function nextLevel(norm) {
-
-    if ( (norm == "A") || (norm == "B") || (norm == "C") || (norm == "D") || (norm == "E") || (norm == "F") || (norm == "G") || (norm == "H") || (norm == "I") || (norm == "J")
-        || (norm == "K") || (norm == "L") || (norm == "M") || (norm == "N") || (norm == "O") || (norm == "P") || (norm == "Q") || (norm == "R") || (norm == "S") || (norm == "T")
-        || (norm == "U") || (norm == "V") || (norm == "W") || (norm == "X") || (norm == "Y") || (norm == "Z") ) {
-
-        var userchoice = " " + norm;
-        var newspan = document.createElement("span");
-        newspan.textContent = userchoice;
-        gues.appendChild(newspan); 
-    } 
 }
 
 function getword() {
@@ -90,11 +99,12 @@ function checkletter(lett) {
         keeptrack += 1;
     } else {
         time -= 1;
+        num.textContent = time;
     }
 
     if (keeptrack == word.length) {
         youwon();
-    } else if (time <= -1) {
+    } else if (time <= 0) {
         youlost();
     } else {
         null;
@@ -103,6 +113,7 @@ function checkletter(lett) {
 }
 
 function youwon() {
+    arr = [];
     keeptrack = 0; 
     start -= 1;
     time = 12;
@@ -114,6 +125,7 @@ function youwon() {
 }
 
 function youlost() {
+    arr = [];
     keeptrack = 0;
     start -= 1;
     time = 12;
