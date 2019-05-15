@@ -16,6 +16,7 @@ var lose = 0;
 
 document.onkeyup = function(e) {
     var letter = e.key.toUpperCase();
+    other.textContent = "";
 
     if ( start == 0 ){
         start =+ 1;
@@ -97,7 +98,7 @@ function checkletter(lett) {
         other.textContent = ("eight spot");
         keeptrack += 1;
     } else {
-        other.textContent = ("No match");
+        null;
     }
 
     if (keeptrack == word.length) {
