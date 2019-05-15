@@ -9,6 +9,8 @@ var word = (choice[what].toUpperCase());
 var other = document.getElementById("left-text");
 var gues = document.getElementById("guess");
 var dots = document.getElementById("show");
+var num = document.getElementById("number");
+
 var win = document.getElementById("winner");
 var winner = 0;
 var loser = document.getElementById("loser");
@@ -17,6 +19,9 @@ var lose = 0;
 document.onkeyup = function(e) {
     var letter = e.key.toUpperCase();
     other.textContent = "";
+    loser.textContent = lose;
+    win.textContent = winner;
+    num.textContent = time;
 
     if ( start == 0 ){
         start =+ 1;
@@ -29,18 +34,6 @@ document.onkeyup = function(e) {
     }
 }
 
-function press() {  
-    document.getElementById("number").innerHTML = time;
-    
-    if ( time >= 1 ){
-        time -= 1;
-    } else {
-        youlost();
-    }
-    loser.textContent = lose;
-    win.textContent = winner;
-}
-
 function nextLevel(norm) {
 
     if ( (norm == "A") || (norm == "B") || (norm == "C") || (norm == "D") || (norm == "E") || (norm == "F") || (norm == "G") || (norm == "H") || (norm == "I") || (norm == "J")
@@ -50,9 +43,7 @@ function nextLevel(norm) {
         var userchoice = " " + norm;
         var newspan = document.createElement("span");
         newspan.textContent = userchoice;
-        gues.appendChild(newspan);
-
-        press(); 
+        gues.appendChild(newspan); 
     } 
 }
 
@@ -98,11 +89,15 @@ function checkletter(lett) {
         other.textContent = ("eight spot");
         keeptrack += 1;
     } else {
-        null;
+        time -= 1;
     }
 
     if (keeptrack == word.length) {
         youwon();
+    } else if (time <= -1) {
+        youlost();
+    } else {
+        null;
     }
 
 }
