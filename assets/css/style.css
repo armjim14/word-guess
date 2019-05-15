@@ -58,6 +58,12 @@ header {
     color: red;
 }
 
+#imgmid {
+    margin: 10%;
+    width: 250px;
+    border:  white dotted 1px;
+}
+
 #right {
     float: right!important;
     width: 50%;
