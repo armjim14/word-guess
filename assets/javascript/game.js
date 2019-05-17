@@ -12,6 +12,7 @@ var arr = [];
 var other = document.getElementById("left-text");
 var gues = document.getElementById("guess");
 var dots = document.getElementById("show");
+var img = document.getElementById("imgmid");
 var num = document.getElementById("number");
 
 var win = document.getElementById("winner");
@@ -148,5 +149,27 @@ function youlost() {
 }
 
 function changeimage(){
-    
+    if (what == 0){
+        img.setAttribute("src", "assets/images/img0.jpg");
+    } else if (what == 1) {
+        img.setAttribute("src", "assets/images/img1.jpg");
+    } else if (what == 2) {
+        img.setAttribute("src", "assets/images/img2.jpg");
+    } else if (what == 3) {
+        img.setAttribute("src", "assets/images/img3.jpg");
+    } else if (what == 4) {
+        img.setAttribute("src", "assets/images/img4.jpg");
+    } else if (what == 5) {
+        img.setAttribute("src", "assets/images/img5.jpg");
+    } else if (what == 6) {
+        img.setAttribute("src", "assets/images/img6.png");
+    } else if (what == 7) {
+        img.setAttribute("src", "assets/images/img7.jpg");
+    } else if (what == 8) {
+        img.setAttribute("src", "assets/images/img8.jpg");
+    } else if (what == 9) {
+        img.setAttribute("src", "assets/images/img9.jpg");
+    } else {
+        null;
+    }
 }
