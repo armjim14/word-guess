@@ -61,11 +61,13 @@ function getword() {
     what = Math.floor(Math.random() * 10);
     word = (choice[what].toUpperCase());
 
+    document.getElementById("wordlen").textContent = " " + word.length;
+
     for ( var i = 0; i < word.length; i++ ) {
         var span = document.createElement("Span");
         span.setAttribute("id", i );
         span.textContent = word[i];
-        document.getElementById(Number).style.display = "none";
+        span.style.display = "none";
         dots.appendChild(span);
     }
 }
@@ -74,27 +76,35 @@ function checkletter(lett) {
 
     if ( word[0] == lett ) {
         other.textContent = "first spot";
+        document.getElementById(0).style.display = "block";
         keeptrack += 1;
     } else if ( word[1] == lett ) {
         other.textContent = ("second spot");
+        document.getElementById(1).style.display = "block";
         keeptrack += 1;
     } else if ( word[2] == lett ) {
         other.textContent = ("third spot");
+        document.getElementById(2).style.display = "block";
         keeptrack += 1;
     } else if ( word[3] == lett ) {
         other.textContent = ("fourth spot");
+        document.getElementById(3).style.display = "block";
         keeptrack += 1;
     } else if ( word[4] == lett ) {
         other.textContent = ("fifth spot");
+        document.getElementById(4).style.display = "block";
         keeptrack += 1;
     } else if ( word[5] == lett ) {
         other.textContent = ("sixth spot");
+        document.getElementById(5).style.display = "block";
         keeptrack += 1;
     } else if ( word[6] == lett ) {
         other.textContent = ("seventh spot");
+        document.getElementById(6).style.display = "block";
         keeptrack += 1;
     } else if ( word[7] == lett ) {
         other.textContent = ("eight spot");
+        document.getElementById(7).style.display = "block";
         keeptrack += 1;
     } else {
         time -= 1;
@@ -121,6 +131,7 @@ function youwon() {
     dots.textContent = "";
     other.textContent = "You won!, The word was " + word + " press space to play again";
     win.textContent = winner;
+    changeimage();
 }
 
 function youlost() {
@@ -133,4 +144,9 @@ function youlost() {
     dots.textContent = "";
     other.textContent = "Sorry you lost, The word was " + word + " press space to play again";
     loser.textContent = lose;
+    changeimage();
+}
+
+function changeimage(){
+    
 }
