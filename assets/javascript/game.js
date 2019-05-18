@@ -68,17 +68,9 @@ function getword() {
     for ( var i = 0; i < word.length; i++ ) {
         var span = document.createElement("Span");
         span.setAttribute("id", i );
-        span.textContent = word[i];
-        span.style.display = "none";
+        span.textContent = "-";
         dots.appendChild(span);
     }
-    // for ( var i = 1; i < word.length; i += 2 ) {
-    //     var span2 = document.createElement("Span");
-    //     span2.setAttribute("id", i );
-    //     span2.textContent = "-";
-    //     span2.style.display = "block";
-    //     dots.appendChild(span2);
-    // }
 }
 
 function checkletter(lett) {
@@ -86,34 +78,42 @@ function checkletter(lett) {
     if ( word[0] == lett ) {
         other.textContent = "first spot";
         document.getElementById(0).style.display = "inline";
+        document.getElementById(0).textContent = word[0];
         keeptrack += 1;
     } else if ( word[1] == lett ) {
         other.textContent = ("second spot");
         document.getElementById(1).style.display = "inline";
+        document.getElementById(1).textContent = word[1];
         keeptrack += 1;
     } else if ( word[2] == lett ) {
         other.textContent = ("third spot");
         document.getElementById(2).style.display = "inline";
+        document.getElementById(2).textContent = word[2];
         keeptrack += 1;
     } else if ( word[3] == lett ) {
         other.textContent = ("fourth spot");
         document.getElementById(3).style.display = "inline";
+        document.getElementById(3).textContent = word[3];
         keeptrack += 1;
     } else if ( word[4] == lett ) {
         other.textContent = ("fifth spot");
         document.getElementById(4).style.display = "inline";
+        document.getElementById(4).textContent = word[4];
         keeptrack += 1;
     } else if ( word[5] == lett ) {
         other.textContent = ("sixth spot");
         document.getElementById(5).style.display = "inline";
+        document.getElementById(5).textContent = word[5];
         keeptrack += 1;
     } else if ( word[6] == lett ) {
         other.textContent = ("seventh spot");
         document.getElementById(6).style.display = "inline";
+        document.getElementById(6).textContent = word[6];
         keeptrack += 1;
     } else if ( word[7] == lett ) {
         other.textContent = ("eight spot");
         document.getElementById(7).style.display = "inline";
+        document.getElementById(7).textContent = word[7];
         keeptrack += 1;
     } else {
         time -= 1;
@@ -131,10 +131,11 @@ function checkletter(lett) {
 }
 
 function youwon() {
+    rtime = 0;
     arr = [];
     keeptrack = 0; 
     start -= 1;
-    time = 12;
+    time = 10;
     winner += 1;
     gues.textContent = "";
     dots.textContent = "";
@@ -144,10 +145,11 @@ function youwon() {
 }
 
 function youlost() {
+    rtime = 0;
     arr = [];
     keeptrack = 0;
     start -= 1;
-    time = 12;
+    time = 10;
     lose += 1;
     gues.textContent = "";
     dots.textContent = "";
