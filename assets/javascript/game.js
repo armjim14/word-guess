@@ -62,6 +62,7 @@ function getword() {
     what = Math.floor(Math.random() * 10);
     word = (choice[what].toUpperCase());
 
+    img.setAttribute("src", "assets/images/chocolate.jpg");
     document.getElementById("wordlen").textContent = " " + word.length;
 
     for ( var i = 0; i < word.length; i++ ) {
@@ -71,6 +72,13 @@ function getword() {
         span.style.display = "none";
         dots.appendChild(span);
     }
+    // for ( var i = 1; i < word.length; i += 2 ) {
+    //     var span2 = document.createElement("Span");
+    //     span2.setAttribute("id", i );
+    //     span2.textContent = "-";
+    //     span2.style.display = "block";
+    //     dots.appendChild(span2);
+    // }
 }
 
 function checkletter(lett) {

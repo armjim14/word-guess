@@ -74,3 +74,7 @@ p {
     font-size: 24px;
     text-align: center;
 }
+
+#guess {
+    padding-top: 10px;
+}
