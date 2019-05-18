@@ -38,7 +38,7 @@ header {
 #both {
     margin: 0 auto;
     border: dotted white 1px;
-    height: 600px;
+    height: 530px;
     width: 50%;
 }
 
@@ -46,7 +46,7 @@ header {
     position: relative;
     float: left;
     width: 49.75%;
-    height: 600px;
+    height: 530px;
     border-right: dotted white 1px;
 }
 
@@ -66,7 +66,7 @@ header {
 #right {
     float: right!important;
     width: 50%;
-    height: 600px;
+    height: 530px;
 }
 
 p {
