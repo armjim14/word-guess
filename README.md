@@ -1,1 +1,1 @@
-# word-guess
+# In this app is only able to be used on a device with a keyboard. The user clicks on a letter and if the letter matches the mytery word The letter will display. This app also keeps score plus shows an image at the end of the round.
