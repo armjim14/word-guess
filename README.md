@@ -15,4 +15,4 @@
 ### https://armjim14.github.io/word-guess/
 
 ## Home page
-![home Page Image](Homepage.png)
+![home Page Image](homePage.png)
